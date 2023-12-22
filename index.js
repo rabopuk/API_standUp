@@ -16,7 +16,7 @@ const startServer = async (port) => {
     return;
   }
 
-  await createFileIfNotExist(CLIENTS)
+  await createFileIfNotExist(CLIENTS);
 
   const comediansData = await fs.readFile(COMEDIANS, 'utf-8');
   const comedians = JSON.parse(comediansData);
@@ -24,9 +24,9 @@ const startServer = async (port) => {
   const server = http
     .createServer(async (req, res) => {
       try {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, OPTIONS");
+        res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
         if (req.method === 'OPTIONS') {
           res.writeHead(204);
