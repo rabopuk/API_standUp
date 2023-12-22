@@ -25,7 +25,8 @@ export const handleUpdateClient = async (req, res, ticketNumber) => {
 
 
     if (clientIndex === -1) {
-      sendError(res, 404, 'Клиент с данным номером не найден');
+      sendError(res, 404, 'Клиент с данным номером билета не найден');
+      return;
     }
 
     // Object.assign(clients[clientIndex], updateDataClient);
